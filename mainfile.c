@@ -11,7 +11,7 @@ size_t siz = 0;
 while (1)
 {
 mydispfunx_edna();
-myreadfunx_edna(whattoprint, &siz);
+myreadfunx_edna((char **)&whattoprint, &siz);
 myexecfunx_edna(whattoprint);
 myprintfunx_edna(whattoprint);
 }
