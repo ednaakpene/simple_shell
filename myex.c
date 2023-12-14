@@ -1,11 +1,11 @@
 #include "headerf.h"
 /**
  * myexecfunx_edna - it executes the commands given
- * @whattoexe: command to execute
+ * @whattoprint: command to execute
  * Return: return void
  */
 
-void myexecfunx_edna(const char *whattoexe)
+void myexecfunx_edna(const char *whattoprint)
 
 {
 	pid_t processid = fork();
@@ -22,7 +22,7 @@ void myexecfunx_edna(const char *whattoexe)
 	char *agm[MAX_ARG];
 	int e = 0;
 
-	tkn = strtok((char *)whattoexe, " ");
+	tkn = strtok((char *)whattoprint, " ");
 
 	while (tkn != NULL)
 	{

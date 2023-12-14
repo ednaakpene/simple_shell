@@ -5,14 +5,14 @@
   */
 int main(void)
 {
-char in_put[MAX_INPUT];
+char whattoprint[MAX_INPUT];
 size_t siz = 0;
 
 while (1)
 {
 mydispfunx_edna();
-myreadfunx_edna(&whattoread, &siz);
-myexecfunx_edna(whattoexe);
+myreadfunx_edna(whattoprint, &siz);
+myexecfunx_edna(whattoprint);
 myprintfunx_edna(whattoprint);
 }
 return (0);
