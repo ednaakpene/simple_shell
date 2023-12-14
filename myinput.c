@@ -26,24 +26,3 @@ exit(EXIT_SUCCESS);
 }
 (*whattoprint)[strcspn(*whattoprint, "\n")] = '\0';
 }
-
-/**
-* main - entry point
-* Return: return 0
-*/
-
-int main(void)
-{
-size_t lth = 0;
-char *lne = NULL;
-
-myprintfunx_edna("Your input: ");
-
-myreadfunx_edna(&lne, &lth);
-
-myprintfunx_edna("output: \n");
-
-free(lne);
-
-return (0);
-}
