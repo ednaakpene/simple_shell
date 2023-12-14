@@ -41,7 +41,7 @@ myprintfunx_edna("Your input: ");
 
 myreadfunx_edna(&lne, &lth);
 
-myprintfunx_edna("output: %s\n", lne);
+myprintfunx_edna("output: \n");
 
 free(lne);
 

@@ -8,13 +8,14 @@
 int main(void)
 {
 char in_put[MAX_INPUT];
-char** whattoread;
-char whattoexe;
+size_t siz = 0;
+
 while (1)
 {
 mydispfunx_edna();
-myreadfunx_edna(const char** whattoread, sizeof(whattoread));
+myreadfunx_edna(&whattoread, &siz);
 myexecfunx_edna(whattoexe);
+myprintfunx_edna(whattoprint);
 }
 return (0);
 }
