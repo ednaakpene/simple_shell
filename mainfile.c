@@ -1,8 +1,6 @@
 #include "headerf.h"
 /**
   * main - entry point
-  *@whattoread: function parameter
-  *@whattoexe: function parameter
   * Return: return 0
   */
 int main(void)
