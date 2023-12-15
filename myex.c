@@ -2,22 +2,37 @@
 /**
  * myexecfunx_edna - it executes the commands given
  * @whattoprint: command to execute
+ * @envp: environment variable
  * Return: return void
  */
 
-void myexecfunx_edna(const char *whattoprint)
-
+void myexecfunx_edna(const char *whattoprint, char *envp[])
 {
 	pid_t processid = fork();
 
 	if (processid == -1)
 	{
-		perror("fork");
+		perror("fork error");
 		exit(EXIT_FAILURE);
 	}
-
-	else if (processid == 0)
+	if (processid == 0)
 	{
+		exec_processid(whattoprint, envp);
+	}
+	else
+	{
+		wait(NULL);
+	}
+}
+
+/**
+ * exec_processid - Execute command in the child process
+ * @whattoprint: Command to be executed
+ * @envp: Environment variables
+ */
+
+void exec_processid(const char *whattoprint, char *envp[])
+{
 	char *tkn;
 	char *agm[MAX_ARG];
 	int e = 0;
@@ -26,19 +41,14 @@ void myexecfunx_edna(const char *whattoprint)
 
 	while (tkn != NULL)
 	{
-	agm[e++] = tkn;
-	tkn = strtok(NULL, " ");
+		agm[e++] = tkn;
+		tkn = strtok(NULL, " ");
 	}
 	agm[e] = NULL;
 
-	if (execve(agm[0], agm, NULL) == -1)
+	if (execve(agm[0], agm, envp) == -1)
 	{
-	perror("execve");
-	exit(EXIT_FAILURE);
-	}
-	}
-	else
-	{
-		wait(NULL);
+		perror("No Command Found.\n");
+		exit(EXIT_FAILURE);
 	}
 }

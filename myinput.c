@@ -8,21 +8,24 @@
 
 void myreadfunx_edna(char **whattoprint, size_t *siz)
 {
-*siz = 0;
-*whattoprint = NULL;
+	ssize_t size;
 
-if (getline(whattoprint, siz, stdin) == -1)
-{
-if (feof(stdin) == 0)
-{
-myprintfunx_edna("Error\n");
-exit(EXIT_FAILURE);
-}
-else
-{
-myprintfunx_edna("\n");
-exit(EXIT_SUCCESS);
-}
-}
-(*whattoprint)[strcspn(*whattoprint, "\n")] = '\0';
+	*whattoprint = NULL;
+
+	size = getline(whattoprint, siz, stdin);
+
+	if (size == -1)
+	{
+		if (feof(stdin))
+		{
+			myprintfunx_edna("\n");
+			exit(EXIT_SUCCESS);
+		}
+		else
+		{
+			myprintfunx_edna("Error\n");
+			exit(EXIT_FAILURE);
+		}
+	}
+	(*whattoprint)[strcspn(*whattoprint, "\n")] = '\0';
 }
