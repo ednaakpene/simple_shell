@@ -11,6 +11,7 @@
 #define MAX_ARG 100
 #define MAX_INPUT 200
 void myprintfunx_edna(const char *whattoprint);
+int _strlen(char *s);
 void mydispfunx_edna(void);
 void myexecfunx_edna(const char *whattoprint, char *envp[]);
 void myreadfunx_edna(char **whattoprint, size_t *siz);
