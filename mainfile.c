@@ -10,7 +10,16 @@ int main(void)
 	size_t siz = 0;
 
 	char *envp[] = {NULL};
+	char *path = getpath(envp);
 
+	if (path != NULL)
+	{
+		printf("PATH: %s\n", path);
+	}
+	else
+	{
+		printf("PATH not found: %s\n", path);
+	}
 	while (1)
 	{
 		mydispfunx_edna();

@@ -15,6 +15,7 @@ void mydispfunx_edna(void);
 void myexecfunx_edna(const char *whattoprint, char *envp[]);
 void myreadfunx_edna(char **whattoprint, size_t *siz);
 int _cusstrcmp(char *s1, char *s2);
+char *getpath(char **envp);
 void exec_processid(const char *whattoprint, char *envp[]);
 char *mystrtokfunx_edna(char *str, const char *del);
 char *_strncat(char *dest, char *src, int n);

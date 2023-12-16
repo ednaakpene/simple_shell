@@ -9,6 +9,9 @@
 void myexecfunx_edna(const char *whattoprint, char *envp[])
 {
 	pid_t processid = fork();
+	char *path = getpath(envp);
+
+	printf("%s", path);
 
 	if (processid == -1)
 	{
