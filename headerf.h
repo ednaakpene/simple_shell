@@ -1,6 +1,6 @@
 #ifndef HEADERF_H
 #define HEADERF_H
-
+#include <stdbool.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
@@ -15,4 +15,6 @@ void mydispfunx_edna(void);
 void myexecfunx_edna(const char *whattoprint, char *envp[]);
 void myreadfunx_edna(char **whattoprint, size_t *siz);
 void exec_processid(const char *whattoprint, char *envp[]);
+char *mystrtokfunx_edna(char *str, const char *del);
+char *_strncat(char *dest, char *src, int n);
 #endif
