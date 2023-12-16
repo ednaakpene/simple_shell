@@ -9,12 +9,12 @@
 char *mystrtokfunx_edna(char *str, const char *del)
 {
 	static char *begin;
-	static bool intok;
+	static int intok;
 	static char *end;
 
 	if (str != NULL)
 		begin = str;
-	intok = false;
+	intok = 0;
 	while (*begin != '\0')
 		const char *d = del;
 
@@ -22,12 +22,12 @@ char *mystrtokfunx_edna(char *str, const char *del)
 	{
 		if (*begin == *d)
 			intok = false;
-		break;
+			break;
 		d++;
 	}
 	if (!intok)
-		intok = true;
-	break;
+		intok = 1;
+		break;
 	begin++;
 	if (*begin == '\0')
 		return (NULL);
@@ -38,11 +38,11 @@ char *mystrtokfunx_edna(char *str, const char *del)
 	while (*d != '\0')
 		if (*end == *d)
 			break;
-	d++;
+		d++;
 	if (*d != '\0')
 		break;
 	end++;
-	intok = true;
+	intok = 1;
 	*end = '\0';
 	return (begin);
 }

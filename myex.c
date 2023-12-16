@@ -37,12 +37,12 @@ void exec_processid(const char *whattoprint, char *envp[])
 	char *agm[MAX_ARG];
 	int e = 0;
 
-	tkn = mystrtokfunx_edna((char *)whattoprint, " ");
+	tkn = strtok((char *)whattoprint, " ");
 
 	while (tkn != NULL)
 	{
 		agm[e++] = tkn;
-		tkn = mystrtokfunx_edna(NULL, " ");
+		tkn = strtok(NULL, " ");
 	}
 	agm[e] = NULL;
 
