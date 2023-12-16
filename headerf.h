@@ -14,6 +14,7 @@ void myprintfunx_edna(const char *whattoprint);
 int _strlen(char *s);
 void mydispfunx_edna(void);
 void myexecfunx_edna(const char *whattoprint, char *envp[]);
+int _isdigit(int c);
 void myreadfunx_edna(char **whattoprint, size_t *siz);
 int _cusstrcmp(char *s1, char *s2);
 char *getpath(char **envp);
